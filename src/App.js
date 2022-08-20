@@ -9,7 +9,6 @@ function App() {
   const [books, setBooks] = useState([])
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  // const [loadSearch, setLoadSearch] = useState(false)
 
   useEffect(() => {
     BooksAPI.getAll().then((response) => {
