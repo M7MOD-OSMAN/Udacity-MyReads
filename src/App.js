@@ -12,15 +12,17 @@ function App() {
 
   useEffect(() => {
     BooksAPI.getAll().then((response) => {
-      setBooks(response)
+      setBooks([...response])
     })
   }, [])
 
-  const moveBetweenShelves = async (book, shelf) => {
-    await BooksAPI.update(book, shelf)
-    await BooksAPI.getAll().then((response) => {
-      setBooks(response)
-    })
+  const moveBetweenShelves = async (selectedShelf, changedBook) => {
+    await BooksAPI.update(changedBook, selectedShelf)
+
+    const updatedBooks = books.filter((item) => changedBook.id !== item.id)
+
+    changedBook.shelf = selectedShelf
+    setBooks([...updatedBooks, changedBook])
   }
 
   const handleSearch = (e) => {
@@ -32,15 +34,12 @@ function App() {
   }
 
   const handleBooksFromSearch = async (query) => {
-    // setLoadSearch(true)
-    try {
+    if (query) {
       const data = await BooksAPI.search(query)
       setSearchResults(data)
-    } catch (error) {
-      console.log(error)
+    } else {
       setSearchResults([])
     }
-    // setLoadSearch(false)
   }
 
   return (
@@ -58,6 +57,7 @@ function App() {
             path='/search'
             element={
               <Search
+                books={books}
                 handleSearch={handleSearch}
                 search={search}
                 searchResults={searchResults}

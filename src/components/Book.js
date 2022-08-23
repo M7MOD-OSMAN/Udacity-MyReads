@@ -1,15 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Book = ({ book, moveBetweenShelves }) => {
-  const updateShelf = (event) => {
-    moveBetweenShelves(book, event.target.value)
+  const [selectedShelf, setSelectedShelf] = useState('none')
+  const updateShelf = (selectedShelf) => {
+    setSelectedShelf(selectedShelf)
+    moveBetweenShelves(selectedShelf, book)
   }
 
-  // const filterMissingThumbnails = () => {
-  //   const thumb = book.imageLinks.smallThumbnail
-  //   const missing = book.filter((item) => item.thumb === null)
-  //   return missing
-  // }
   return (
     <li>
       <div className='book'>
@@ -23,8 +20,13 @@ const Book = ({ book, moveBetweenShelves }) => {
             }}
           ></div>
           <div className='book-shelf-changer'>
-            <select onChange={updateShelf} value={book.shelf}>
-              <option>Move to...</option>
+            <select
+              onChange={(event) => updateShelf(event.target.value)}
+              value={book.shelf ? book.shelf : selectedShelf}
+            >
+              <option value='moveTo' disabled>
+                Move to...
+              </option>
               <option value='currentlyReading'>Currently Reading</option>
               <option value='wantToRead'>Want to Read</option>
               <option value='read'>Read</option>

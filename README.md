@@ -1,40 +1,26 @@
-# MyReads Project
+# Book Shelves Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This project acts as a library for your books , you can search many books and choose the right book you can mark the selected book to one be read , want to read or currently reading , in your main page in this project you can find your books within every shelf you have selected . this project hepl you to orgnize your books so feel free to use it , this projects is depending on react-cross-skilling programe .
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) to bootstrap the project.
 
-## TL;DR
+## Getting Started
 
-To get started developing right away:
+To get started using this project right away:
 
 - install all project dependencies with `npm install`
 - start the development server with `npm start`
+- open your browser in port 4200 you will get your project ready
 
-## What You're Getting
+## Prerequisites
 
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+What things you need to install the software and how to install them
+
 ```
-
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+- you should have installed nodejs with npm in your local machine
+- you will need code editor like vscode
+- you need a browser which has javascript enabled
+```
 
 ## Backend Server
 
@@ -49,7 +35,7 @@ To simplify your development process, we've provided a backend server for you to
 Method Signature:
 
 ```js
-getAll();
+getAll()
 ```
 
 - Returns a Promise which resolves to a JSON object containing a collection of book objects.
@@ -60,7 +46,7 @@ getAll();
 Method Signature:
 
 ```js
-update(book, shelf);
+update(book, shelf)
 ```
 
 - book: `<Object>` containing at minimum an `id` attribute
@@ -72,7 +58,7 @@ update(book, shelf);
 Method Signature:
 
 ```js
-search(query);
+search(query)
 ```
 
 - query: `<String>`
@@ -85,10 +71,16 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is free to use
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Authors
+
+- **Mahmoud Osman** - _Updated work_
+
+## License
+
+- see the LICENSE.md file for details
